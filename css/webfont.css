@@ -1,0 +1,16 @@
+@font-face {
+	font-family:'AvantGardeBold';
+	src:url("fonts/AvantGarde-Bold?#iefix") format("embedded-opentype"),url("fonts/AvantGarde-Bold.woff") format("woff"),url("fonts/AvantGarde-Bold.ttf") format("truetype"),url("fonts/AvantGarde-Bold.svg#svgFontName") format("svg")
+}
+@font-face {
+	font-family:'Galaxie';
+	font-style:normal;
+	font-weight:normal;
+	src:url("fonts/GalaxieCopernicus-Book.eot?#iefix") format("embedded-opentype"),url("fonts/GalaxieCopernicus-Book.woff") format("woff"),url("fonts/GalaxieCopernicus-Book.svg#svgFontName") format("svg")
+}
+@font-face {
+	font-family:'GalaxieItalic';
+	font-style:normal;
+	font-weight:normal;
+	src:url("fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"),url("fonts/GalaxieCopernicus-BookItalic.woff") format("woff"),url("fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg")
+}
