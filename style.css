@@ -8,7 +8,165 @@ Template: bridge
 @import url("../bridge/style.css");
 
 
+
+
+/* FONT */
+body {
+	font-family: "Galaxie", sans-serif;
+	letter-spacing: 0;
+}
+h2, h2 a {
+	letter-spacing: -0.03em;
+}
+
+
+
+
 /* GLOBAL */
 header.sticky .q_logo a {
 	height: 40px !important;
+}
+
+
+/* COUPON */
+.coupon-item {
+	display: block;
+	float: left;
+	width: 253px;
+	font-size: 13px;
+	line-height: 23.5px;
+	color: #5a5a5a;
+}
+.coupon-item-header {
+	height: 58px;
+	background-color: #00a762;
+	box-sizing: border-box;
+	padding: 8px 9px 8px 14px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+}
+.coupon-item-header:before {
+	display: block;
+	position: absolute;
+	content: "";
+	top: 20px;
+	right: 9px;
+	width: 23px;
+	height: 23px;
+	background: url("images/coupon-hole.png") no-repeat;
+}
+.coupon-item-header:after {
+	display: block;
+	position: absolute;
+	content: "";
+	bottom: -3px;
+	left: 0;
+	width: 100%;
+	height: 6px;
+	background: url("images/coupon-dot-border.png");
+}
+.coupon-item-header .issue-logo {
+	width: 38px;
+	height: 38px;
+	border: 2px solid white;
+	border-radius: 100%;
+	float: left;
+	margin-right: 9px;
+}
+.coupon-item-header h2.issue-title {
+	font-size: 15.5px;
+	line-height: 42px;
+	text-transform: uppercase;
+	color: white;
+	font-family: "GillSansBold";
+}
+.coupon-item-body {
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px 12.5px 18px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+.coupon-item-body:before {
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	content: "";
+	height: 3px;
+	width: 100%;
+	background-color: #00a762;
+}
+.coupon-item-body:after {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: "";
+	height: 2px;
+	width: 100%;
+	background: url("images/coupon-dashed-border.png");
+}
+.coupon-item-footer {
+	background-color: white;
+	border-radius: 10px;
+	padding: 13px 12.5px 11px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+.coupon-item-footer:after {
+	display: block;
+	content: "";
+	height: 11px;
+	width: 100%;
+	background-color: #00a762;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.coupon-item h3.offer-title {
+	font-size: 17px;
+	text-transform: none;
+	letter-spacing: 0.03em;
+	line-height: 17px;
+	padding: 18px 0 10px;
+}
+.coupon-item .call-to-action {
+	padding: 15px 0 17px 0;
+}
+.coupon-item .call-to-action:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.coupon-item .qbutton {
+	float: right;
+	border-radius: 0px;
+	border-width: 1px;
+	height: 30px;
+	line-height: 30px;
+	width: 84px;
+	box-sizing: border-box !important;
+}
+.coupon-item .social-sharing {
+	line-height: 30px;
+	float: left;
+}
+.coupon-item .q_social_icon_holder:first-child {
+	margin-left: 0;
+}
+.coupon-item .q_social_icon_holder .simple_social {
+	color: #4b4b4b;
+}
+.coupon-item .q_social_icon_holder:hover .simple_social {
+	color: #00a762;
+}
+.coupon-item .qbutton:hover,
+.coupon-item-header,
+.coupon-item-body:before,
+.coupon-item-footer:after {
+	background-color: #00a762;
 }

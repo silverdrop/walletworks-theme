@@ -32,3 +32,14 @@ function walletworks_custom_title_text($text) {
 	return $text;
 }
 add_filter( 'qode_title_text', 'walletworks_custom_title_text', 10, 1);
+
+
+
+function coupon_list( $atts ) {
+	ob_start();
+	get_template_part( 'coupon' ); 
+	$output = ob_get_contents();
+	ob_end_clean();
+	return $output;
+}
+add_shortcode( 'couponlist', 'coupon_list' );
