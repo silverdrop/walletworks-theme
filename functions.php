@@ -33,13 +33,68 @@ function walletworks_custom_title_text($text) {
 }
 add_filter( 'qode_title_text', 'walletworks_custom_title_text', 10, 1);
 
-
+function walletworks_theme_setup() {
+    add_image_size( 'coupon', 250, 140, true ); // (cropped)
+}
+add_action( 'after_setup_theme', 'walletworks_theme_setup' );
 
 function coupon_list( $atts ) {
 	ob_start();
-	get_template_part( 'coupon' ); 
+
+	echo "<div class='coupon-list'><div class='coupon-list-inner'>";
+	$args = array(
+		'post_type'	=> 'coupon',
+		'orderby'	=> 'date',
+		'order'		=> 'ASC'
+	);
+	query_posts( $args );
+	while(have_posts()) : the_post();
+		get_template_part( 'coupon' ); 
+	endwhile;
+	echo "</div></div>";
+
 	$output = ob_get_contents();
 	ob_end_clean();
 	return $output;
 }
 add_shortcode( 'couponlist', 'coupon_list' );
+
+function coupon_filter( $atts ) {
+	ob_start();
+?>
+	<div class='coupon-filter-wrapper grid_section'><div class='section_inner clearfix'>
+		<div class='coupon-filter'>
+			<div class="vc_row">
+				<div class="vc_col-sm-4">
+					<select>
+						<option disabled>Type</option>
+						<option value="coupon">Coupon</option>
+						<option value="member_card">Member Card</option>
+					</select> 
+				</div>
+				<div class="vc_col-sm-4">
+					<select>
+						<option disabled>Popularity</option>
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select> 
+				</div>
+				<div class="vc_col-sm-4">
+					<select>
+						<option disabled="">Issuer</option>
+						<option value="starbucks">Starbucks</option>
+						<option value="pizzahut">Pizzahut</option>
+						<option value="wallmart">Wallmart</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+	</div></div>
+<?php
+	$output = ob_get_contents();
+	ob_end_clean();
+	return $output;
+}
+add_shortcode( 'couponfilter', 'coupon_filter' );
