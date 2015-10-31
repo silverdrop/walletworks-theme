@@ -41,7 +41,7 @@ add_action( 'after_setup_theme', 'walletworks_theme_setup' );
 function coupon_list( $atts ) {
 	ob_start();
 
-	echo "<div class='coupon-list'><div class='coupon-list-inner'>";
+	echo "<div class='coupon-list clearfix'><div class='coupon-list-inner'>";
 	$args = array(
 		'post_type'	=> 'coupon',
 		'orderby'	=> 'date',

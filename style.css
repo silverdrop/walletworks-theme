@@ -145,6 +145,10 @@ header.sticky .q_logo a {
 	bottom: 0;
 	left: 0;
 }
+.coupon-item .coupon-image img {
+	width: 100%;
+	height: auto;
+}
 .coupon-item h3.offer-title {
 	font-size: 17px;
 	text-transform: none;
@@ -160,30 +164,25 @@ header.sticky .q_logo a {
 	content: "";
 	clear: both;
 }
-.coupon-item .qbutton {
+.coupon-item .call-button {
 	float: right;
-	border-radius: 0px;
-	border-width: 1px;
-	height: 30px;
-	line-height: 30px;
-	width: 84px;
-	box-sizing: border-box !important;
-}
-.coupon-item .qbutton:hover {
-	border-color: transparent;
-	background-color: #00a762;
+	width: 110px;
+	height: 35px;
+	background: url("images/add-to-apple-wallet.svg") no-repeat center;
+	background-size: contain;
 }
 .coupon-item .social-sharing {
-	line-height: 30px;
+	line-height: 35px;
 	float: left;
 }
 .coupon-item .q_social_icon_holder:first-child {
 	margin-left: 0;
 }
-.coupon-item .q_social_icon_holder .simple_social {
-	color: #6C6C6C;
+.coupon-item .q_social_icon_holder a {
+	color: rgb(186, 186, 186);
+	font-size: 16px;
 }
-.coupon-item .q_social_icon_holder:hover .simple_social {
+.coupon-item .q_social_icon_holder a:hover {
 	color: #000;
 }
 
@@ -235,7 +234,7 @@ header.sticky .q_logo a {
 	body, p 						{font-size: 16px;}
 }
 @media screen and (max-width: 600px) {
-	.coupon-list 					{max-width: 255px;}
+	.coupon-list 					{max-width: 80%;}
 	.coupon-item 					{width: 100%;}
 	.coupon-item 					{clear: left;}
 }
@@ -245,4 +244,7 @@ header.sticky .q_logo a {
 	h5, h5 a 						{font-size: 24px;}
 	h6, h6 a 						{font-size: 14px;}
 	body, p 						{font-size: 14px;}
+}
+@media screen and (max-width: 360px) {
+	.coupon-list 					{max-width: 100%;}
 }

@@ -19,11 +19,11 @@
 		<span class="expire-by">expire by <?php the_field('expire_by');?></span>
 		<div class="call-to-action">
 			<div class="social-sharing">
-				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-twitter fa-lg simple_social"></i></a></span>
-				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-facebook fa-lg simple_social"></i></a></span>
-				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-instagram fa-lg simple_social"></i></a></span>
+				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-twitter fa-lg"></i></a></span>
+				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-facebook fa-lg"></i></a></span>
+				<span class="q_social_icon_holder normal_social"><a href="#" target="_blank"><i class="qode_icon_font_awesome fa fa-instagram fa-lg"></i></a></span>
 			</div>
-			<a class="qbutton normal">Buy</a>
+			<a class="call-button"></a>
 		</div>
 	</div>
 	<style>
