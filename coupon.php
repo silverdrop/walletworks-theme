@@ -1,12 +1,14 @@
 <?php
 	$logo_image = wp_get_attachment_image_src( get_field('issuer_logo') );
+	$type = get_field('type');
+	$issuer = get_field('issuer');
 	$coupon_id = "coupon_".get_the_ID();
 	$color = get_field('color');
 ?>
-<div class="coupon-item" id="<?=$coupon_id?>">
+<div class="coupon-item" id="<?=$coupon_id?>" data-issuer="<?=$issuer->slug?>" data-coupon-type="<?=$type->slug?>">
 	<div class="coupon-item-header">
 		<div class="issuer-logo" style="background-image:url('<?php echo $logo_image[0];?>')"></div>
-		<h2 class="issuer-title"><?php the_field('issuer_name');?></h2>
+		<h2 class="issuer-title"><?=$issuer->name;?></h2>
 	</div>
 	<div class="coupon-item-body">
 		<div class="coupon-image">
@@ -27,7 +29,6 @@
 		</div>
 	</div>
 	<style>
-		#<?=$coupon_id;?>.coupon-item .qbutton:hover,
 		#<?=$coupon_id;?> .coupon-item-header,
 		#<?=$coupon_id;?> .coupon-item-body:before,
 		#<?=$coupon_id;?> .coupon-item-footer:after {

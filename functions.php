@@ -7,6 +7,7 @@ function walletworks_enqueue_webfont() {
 }
 function walletworks_enqueue_scripts() {
 	wp_enqueue_style( 'childstyle', get_stylesheet_directory_uri() . '/style.css' );
+	wp_enqueue_script( 'shuffle', get_stylesheet_directory_uri() . '/js/jquery.shuffle.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'childscript', get_stylesheet_directory_uri() . '/js/custom.js', array(), '1.0.0', true );
 }
 //add_action( 'wp_enqueue_scripts', 		'walletworks_enqueue_webfont', 10);
@@ -60,33 +61,46 @@ function coupon_list( $atts ) {
 add_shortcode( 'couponlist', 'coupon_list' );
 
 function coupon_filter( $atts ) {
+	$types = get_terms( 'coupon_type', 'orderby=count' );
+	$issuers = get_terms( 'coupon_issuer', 'orderby=count' );
 	ob_start();
 ?>
 	<div class='coupon-filter-wrapper grid_section'><div class='section_inner clearfix'>
 		<div class='coupon-filter'>
 			<div class="vc_row">
-				<div class="vc_col-sm-4">
-					<select>
-						<option disabled>Type</option>
-						<option value="coupon">Coupon</option>
-						<option value="member_card">Member Card</option>
+				<div class="vc_col-xs-4">
+					<select id="type_filter">
+						<option value="" disabled selected style="display: none;">Type</option>
+						<option value="all">All</option>
+						<?php 
+						if ( ! empty( $types ) && ! is_wp_error( $types ) ){
+						    foreach ( $types as $type ) {
+						       echo '<option value="'.$type->slug.'">'.$type->name.'</option>';
+						    }
+						}
+						?>
 					</select> 
 				</div>
-				<div class="vc_col-sm-4">
+				<div class="vc_col-xs-4">
 					<select>
-						<option disabled>Popularity</option>
+						<option disabled selected>Popularity</option>
 						<option value="volvo">Volvo</option>
 						<option value="saab">Saab</option>
 						<option value="mercedes">Mercedes</option>
 						<option value="audi">Audi</option>
 					</select> 
 				</div>
-				<div class="vc_col-sm-4">
-					<select>
-						<option disabled="">Issuer</option>
-						<option value="starbucks">Starbucks</option>
-						<option value="pizzahut">Pizzahut</option>
-						<option value="wallmart">Wallmart</option>
+				<div class="vc_col-xs-4">
+					<select id="issuer_filter">
+						<option value="" disabled selected style="display: none;">Issuer</option>
+						<option value="all">All</option>
+						<?php 
+						if ( ! empty( $issuers ) && ! is_wp_error( $issuers ) ){
+						    foreach ( $issuers as $issuer ) {
+						       echo '<option value="'.$issuer->slug.'">'.$issuer->name.'</option>';
+						    }
+						}
+						?>
 					</select> 
 				</div>
 			</div>
