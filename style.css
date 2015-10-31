@@ -10,18 +10,6 @@ Template: bridge
 
 
 
-/* FONT */
-body {
-	font-family: "Galaxie", sans-serif;
-	letter-spacing: 0;
-}
-h2, h2 a {
-	letter-spacing: -0.03em;
-}
-
-
-
-
 /* GLOBAL */
 header.sticky .q_logo a {
 	height: 40px !important;
@@ -94,9 +82,7 @@ header.sticky .q_logo a {
 	line-height: 42px;
 	text-transform: uppercase;
 	color: white;
-	font-family: "GillSans-UltraBold";
-	font-weight: 300;
-	letter-spacing: 0.03em;
+	font-weight: 800;
 	padding-top: 2.5px;
 }
 .coupon-item-body {
@@ -220,6 +206,9 @@ header.sticky .q_logo a {
 	.coupon-list 					{max-width: 845px;}
 	.coupon-item 					{width: 33.33%;}
 	.coupon-item:nth-child(3n+1) 	{clear: left;}
+}
+@media screen and (max-width: 1000px) {
+	.logo_wrapper, .side_menu_button, .mobile_menu_button	{height: 80px !important;}
 }
 @media screen and (max-width: 900px) {
 	.coupon-list 					{max-width: 550px;}
