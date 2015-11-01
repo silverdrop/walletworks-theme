@@ -180,7 +180,6 @@ header.sticky .q_logo a {
 	box-sizing: border-box;
 	padding: 60px 0px;
 	background-color: rgba(56, 37, 31, 0.83);
-	margin-top: -175px;
 }
 .coupon-filter select {
 	height: 55px;
@@ -194,6 +193,12 @@ header.sticky .q_logo a {
 .coupon-filter select option {
 	padding: 10px 20px;
 	font-size: 16px;
+}
+#sticky-wrapper {
+	margin-top: -175px;
+}
+#sticky-wrapper.is-sticky .coupon-filter-wrapper {
+	background-color: #38251F;
 }
 
 /* RESPONSIVE */
@@ -221,11 +226,12 @@ header.sticky .q_logo a {
 	h5, h5 a 						{font-size: 30px;}
 	h6, h6 a 						{font-size: 16px;}
 	body, p 						{font-size: 16px;}
-	.coupon-filter-wrapper 			{height: 80px; margin-top: -80px; padding: 20px 0px;}
+	.coupon-filter-wrapper 			{height: 80px; padding: 20px 0px;}
 	.coupon-filter-wrapper.grid_section .section_inner		{width: 100%; padding: 0px 15px; box-sizing: border-box;}
 	.coupon-filter-wrapper .vc_col-xs-4						{padding: 0 7px;}
 	.coupon-filter-wrapper select	{height: 40px; font-size: 16px; padding-left: 5px; padding-right: 5px;}
 	.coupon-filter select option	{font-size: 14px; padding-left: 7px; padding-right: 7px;}
+	#sticky-wrapper 				{margin-top: -80px;}
 }
 @media screen and (max-width: 600px) {
 	.coupon-list 					{max-width: 80%;}
