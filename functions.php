@@ -71,7 +71,7 @@ function coupon_filter( $atts ) {
 			<div class="vc_row">
 				<div class="vc_col-xs-4">
 					<select id="type_filter">
-						<option value="" disabled selected style="display: none;">Type</option>
+						<option value="" disabled selected style="display: none;">Typ</option>
 						<option value="all">All</option>
 						<?php 
 						if ( ! empty( $types ) && ! is_wp_error( $types ) ){
@@ -84,21 +84,19 @@ function coupon_filter( $atts ) {
 				</div>
 				<div class="vc_col-xs-4">
 					<select>
-						<option disabled selected>Popularity</option>
-						<option value="volvo">Volvo</option>
-						<option value="saab">Saab</option>
-						<option value="mercedes">Mercedes</option>
-						<option value="audi">Audi</option>
+						<option value="" disabled selected style="display: none;">Sortering</option>
+						<option value="volvo">Populärast</option>
+						<option value="saab">Nyast</option>
 					</select> 
 				</div>
 				<div class="vc_col-xs-4">
 					<select id="issuer_filter">
-						<option value="" disabled selected style="display: none;">Issuer</option>
+						<option value="" disabled selected style="display: none;">Varumärke</option>
 						<option value="all">All</option>
 						<?php 
 						if ( ! empty( $issuers ) && ! is_wp_error( $issuers ) ){
 						    foreach ( $issuers as $issuer ) {
-						       echo '<option value="'.$issuer->slug.'">'.$issuer->name.'</option>';
+						       //echo '<option value="'.$issuer->slug.'">'.$issuer->name.'</option>';
 						    }
 						}
 						?>
